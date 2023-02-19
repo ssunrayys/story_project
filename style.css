@@ -1,0 +1,11 @@
+body {
+    margin:30px 15px;
+    background: rgb(4, 7, 64);
+    color: white;
+    font-size: 24px;
+    text-align: justify;
+}
+
+.accent {
+    color: fuchsia;
+}

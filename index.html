@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Story of Aragon</title>
 </head>
 <body>
     <script>
-        document.body.innerHTML = '
-            < p > Once upon a time, in a far - off land, there lived a great king named Aragorn.He was loved by his people for his bravery, wisdom, and kindness.One day, a group of bandits attacked the kingdom and stole the crown jewels.Aragorn knew he needed to act fast, so he summoned his trusted warriors, Legolas and Gimli, to help him track down the bandits.</p > <p>Together, the three heroes set out on a perilous journey through treacherous terrain and dangerous forests. Along the way, they encountered a group of skilled archers led by the brave warrior, Katniss Everdeen. She joined them in their quest to retrieve the stolen jewels.</p> <p>As they journeyed deeper into the wilderness, they encountered a fierce dragon that had been terrorizing nearby villages. With the help of the powerful wizard, Gandalf, they were able to defeat the dragon and save the villages from further destruction.</p> <p>Finally, after many battles and challenges, the heroes arrived at the bandits hideout. With the help of the skilled thief, Robin Hood, they were able to sneak into the hideout undetected and retrieve the crown jewels.</p><p>The people of the kingdom rejoiced as Aragorn, Legolas, Gimli, Katniss, Gandalf, and Robin Hood returned with the stolen jewels. The heroes were hailed as saviors and celebrated with a grand feast in their honor.</p> <p>From that day on, the kingdom was safe and prosperous, and the heroes were forever remembered as the ones who saved the day.</p>';
+        const mainPerson = 'Aragon';
+        const quality = ['bravery', 'wisdom', 'kindness'];
+        const heroes = {
+            archer: 'Katniss Everdeen',
+            thief: 'Robin Hood',
+            magician: 'Gandalf',
+            warriors: ['Legolas', 'Gimli'],
+        };
+        const countWarriors = heroes.warriors.length;
+        const listOfqualitywithspace = quality.map(quality => ' ' + quality);
+        const listOfwarriorswithspace = heroes.warriors.map(warriors => ' ' + warriors);
+
+        document.body.innerHTML = `
+            <p>Once upon a time, in a far - off land, there lived a great king named <span class='accent'>${mainPerson}</span>. He was loved by his people for his <span class='accent'>${listOfqualitywithspace}</span>. One day, a group of bandits attacked the kingdom and stole the crown jewels. <span class='accent'>${mainPerson}</span> knew he needed to act fast, so he summoned his trusted warriors: <span class='accent'>${listOfwarriorswithspace}</span> to help him track down the bandits.</p > 
+            <p>Together, <span class='accent'>${countWarriors}</span> heroes set out on a perilous journey through treacherous terrain and dangerous forests. Along the way, they encountered a group of skilled archers led by the brave warrior, <span class='accent'>${heroes.archer}</span>. She joined them in their quest to retrieve the stolen jewels.</p> 
+            <p>As they journeyed deeper into the wilderness, they encountered a fierce dragon that had been terrorizing nearby villages. With the help of the powerful wizard, <span class='accent'>${heroes.magician}</span>, they were able to defeat the dragon and save the villages from further destruction.</p> 
+            <p>Finally, after many battles and challenges, the heroes arrived at the bandits hideout. With the help of the skilled thief, <span class='accent'>${heroes.thief}</span>, they were able to sneak into the hideout undetected and retrieve the crown jewels.</p>
+            <p>The people of the kingdom rejoiced as <span class='accent'>${mainPerson + ', ' + listOfwarriorswithspace + ', ' + heroes.archer + ', ' + heroes.magician + ' and ' + heroes.thief}</span> returned with the stolen jewels. The heroes were hailed as saviors and celebrated with a grand feast in their honor.</p>`;
     </script>
 </body>
 </html>
